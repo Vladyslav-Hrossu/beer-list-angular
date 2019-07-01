@@ -1,1 +1,98 @@
-<p>registration works!</p>
+<div class="col-md-8 col-xs-12 auth">
+  <p class="text-center header">Регистрация для получения доступа</p>
+  <hr>
+  <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        placeholder="Введите email"
+        formControlName="email"
+        [ngClass]="{'has-error': regForm.get('email').invalid && regForm.get('email').touched}"
+      >
+      <div
+        class="alert-danger warning-message"
+        *ngIf="regForm.get('email').invalid && regForm.get('email').touched"
+      >
+        <span *ngIf="regForm.get('email')['errors']['required']">Email не может быть пустым. </span>
+        <span *ngIf="regForm.get('email')['errors']['email']">Введите корректный email. </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input
+        type="password"
+        class="form-control underlined"
+        id="password"
+        placeholder="Введите пароль"
+        formControlName="password"
+        [ngClass]="{'has-error': regForm.get('password').invalid && regForm.get('password').touched}"
+      >
+      <div
+        *ngIf="regForm.get('password').invalid && regForm.get('password').touched"
+        class="alert-danger warning-message"
+      >
+            <span
+              *ngIf="regForm.get('password')['errors']['minlength'] && regForm.get('password')['errors']['minlength']['requiredLength']">
+              Пароль должен быть {{ regForm.get('password')['errors']['minlength']['requiredLength'] }} символов.
+              Сейчас {{regForm.get('password')['errors']['minlength']['actualLength']}}
+            </span>
+        <span *ngIf="regForm.get('password')['errors']['required']">
+              Введите пожалуйста пароль!
+            </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input
+        type="text"
+        class="form-control underlined"
+        id="name"
+        placeholder="Введите имя"
+        formControlName="name"
+        [ngClass]="{'has-error': regForm.get('name').invalid && regForm.get('name').touched}"
+      >
+      <div
+        *ngIf="regForm.get('name').invalid && regForm.get('name').touched"
+        class="alert-danger warning-message"
+      >
+        <span *ngIf="regForm.get('email')['errors']['required']">Имя не может быть пустым. </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="agree">
+        <input
+          class="checkbox"
+          id="agree"
+          type="checkbox"
+          formControlName="agree"
+        >
+        <span>Согласен с правилами</span>
+      </label>
+      <div
+        *ngIf="regForm.get('agree').invalid && regForm.get('name').touched"
+        class="alert-danger warning-message"
+      >
+        <span *ngIf="regForm.get('agree')['errors']['requiredTrue']">Необходимо согласится с правилами</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn btn-block btn-primary"
+      >
+        Зарегистрироваться
+      </button>
+    </div>
+    <div class="form-group">
+      <p class="text-muted text-center">
+        Уже есть аккаунт?
+        <a>
+          Войти!
+        </a>
+      </p>
+    </div>
+  </form>
+</div>

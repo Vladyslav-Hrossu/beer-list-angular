@@ -43,7 +43,8 @@
             *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"
             class="alert-danger warning-message"
           >
-            <span *ngIf="loginForm.get('password')['errors']['minlength'] && loginForm.get('password')['errors']['minlength']['requiredLength']">
+            <span
+              *ngIf="loginForm.get('password')['errors']['minlength'] && loginForm.get('password')['errors']['minlength']['requiredLength']">
               Пароль должен быть {{ loginForm.get('password')['errors']['minlength']['requiredLength'] }} символов.
               Сейчас {{loginForm.get('password')['errors']['minlength']['actualLength']}}
             </span>
