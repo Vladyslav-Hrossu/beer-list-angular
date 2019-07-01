@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(){
     const formData = this.loginForm.value;
-    console.log(formData);
+    console.log(this.loginForm);
+    console.log(this.loginForm.get('email'));
+    console.log(this.loginForm.get('password'));
   }
 }
