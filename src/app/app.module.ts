@@ -8,7 +8,10 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import {ReactiveFormsModule} from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
 import { SystemComponent } from './system/system.component';
-import {AuthRoutingModule} from "./auth/auth-routing.module";
+import {AuthRoutingModule} from './auth/auth-routing.module';
+import { HttpClientModule }   from '@angular/common/http';
+import {UsersService} from "./shared/services/users.service";
+import {AuthService} from "./shared/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import {AuthRoutingModule} from "./auth/auth-routing.module";
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
