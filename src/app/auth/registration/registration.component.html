@@ -1,3 +1,4 @@
+<hr>
 <p class="text-center header">Регистрация для получения доступа</p>
 <hr>
 <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
@@ -57,7 +58,7 @@
       *ngIf="regForm.get('name').invalid && regForm.get('name').touched"
       class="alert-danger warning-message"
     >
-      <span *ngIf="regForm.get('email')['errors']['required']">Имя не может быть пустым. </span>
+      <span *ngIf="regForm.get('name')['errors']['required']">Имя не может быть пустым. </span>
     </div>
   </div>
   <div class="form-group">
@@ -95,4 +96,5 @@
     </p>
   </div>
 </form>
+
 
