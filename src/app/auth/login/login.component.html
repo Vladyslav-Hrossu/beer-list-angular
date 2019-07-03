@@ -2,6 +2,11 @@
 <hr>
 <div class="auth-content ">
   <p class="text-center header">Войдите для работы</p>
+  <div
+    *ngIf="message.text"
+    class="alert-{{message.type}} warning-message">
+    {{message.text}}
+  </div>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="email">Email</label>

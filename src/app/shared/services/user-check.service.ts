@@ -4,8 +4,8 @@ import {Injectable} from "@angular/core";
 
 export class UserCheckService {
 
-  public checkUserByEmail(email: string, userList: any[]): boolean {
-    return userList.some((user) => user['email'] === email)
+  public checkUserByEmail(email: string, userList: any[]): any {
+    const user = userList.filter((user) => user['email'] === email);
+    return  user[0];
   }
-
 }
