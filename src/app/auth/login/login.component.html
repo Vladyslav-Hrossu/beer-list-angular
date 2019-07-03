@@ -1,4 +1,3 @@
-
 <hr>
 <div class="auth-content ">
   <p class="text-center header">Войдите для работы</p>
@@ -26,12 +25,12 @@
               Введите корректный Email!
             </span>
         <span *ngIf="loginForm.get('email')['errors']['required']">
-              Введите пожалуйста Email!
+              Пожалуйста, введите Email!
             </span>
       </div>
     </div>
-
-    <div class="form-group"><label for="password">Пароль</label>
+    <div class="form-group">
+      <label for="password">Пароль</label>
       <input
         type="password"
         class="form-control"
@@ -44,14 +43,14 @@
         *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"
         class="alert-danger warning-message"
       >
-            <span
+        <span
               *ngIf="loginForm.get('password')['errors']['minlength'] && loginForm.get('password')['errors']['minlength']['requiredLength']">
               Пароль должен быть {{ loginForm.get('password')['errors']['minlength']['requiredLength'] }} символов.
               Сейчас {{loginForm.get('password')['errors']['minlength']['actualLength']}}
-            </span>
+        </span>
         <span *ngIf="loginForm.get('password')['errors']['required']">
               Введите пожалуйста пароль!
-            </span>
+        </span>
       </div>
     </div>
     <div class="form-group">

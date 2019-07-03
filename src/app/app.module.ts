@@ -13,6 +13,7 @@ import {AuthRoutingModule} from './auth/auth-routing.module';
 import {UsersService} from "./shared/services/users.service";
 import {AuthService} from "./shared/services/auth.service";
 import {UserCheckService} from "./shared/services/user-check.service";
+import {AuthGuard} from "./shared/services/auth.guard";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {UserCheckService} from "./shared/services/user-check.service";
     AuthRoutingModule,
     HttpClientModule
   ],
-  providers: [UsersService, AuthService, UserCheckService],
+  providers: [UsersService, AuthService, UserCheckService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
