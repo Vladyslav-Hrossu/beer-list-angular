@@ -4,7 +4,7 @@
   <p class="text-center header">Войдите для работы</p>
   <div
     *ngIf="message.text"
-    class="alert-{{message.type}} warning-message">
+    class="alert-{{message.type}} warning-message text-center">
     {{message.text}}
   </div>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">

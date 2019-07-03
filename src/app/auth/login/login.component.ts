@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
               private authService: AuthService,
               private router: Router,
               private userCheckService: UserCheckService
-              ) {
+  ) {
     this.loginForm = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, [Validators.required, Validators.minLength(6)])
@@ -39,19 +39,19 @@ export class LoginComponent implements OnInit {
       .subscribe((users) => this.usersList = users);
     this.message = new Message('danger', '');
   }
-  onSubmit(){
+
+  onSubmit() {
     const user = this.userCheckService.checkUserByEmail(this.loginForm.get('email').value, this.usersList);
 
-    if(user && user['password'] === this.loginForm.get('password').value){
+    if (user && user['password'] === this.loginForm.get('password').value) {
       this.authService.login();
       this.router.navigate(['/system']);
     } else {
       this.showMessage({
         text: 'Неверные данные для входа!',
         type: 'danger'
-      }) ;
+      });
     }
-
 
   }
 

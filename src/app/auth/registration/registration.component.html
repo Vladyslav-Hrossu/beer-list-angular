@@ -1,5 +1,5 @@
 <hr>
-<p class="text-center header">Регистрация для получения доступа</p>
+<p class="text-center header">Регистрация</p>
 <hr>
 <div
   *ngIf="message.text"
@@ -77,10 +77,10 @@
       <span>Согласен с правилами</span>
     </label>
     <div
-      *ngIf="regForm.get('agree').invalid && regForm.get('name').touched"
+      *ngIf="regForm.get('agree').invalid && regForm.get('agree').touched"
       class="alert-danger warning-message"
     >
-      <span *ngIf="regForm.get('agree')['errors']['requiredTrue']">Необходимо согласится с правилами</span>
+      Необходимо согласится с правилами
     </div>
   </div>
   <div class="form-group">
