@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     const user = this.userCheckService.checkUserByEmail(this.loginForm.get('email').value, this.usersList);
 
-    if(user['password'] === this.loginForm.get('password').value){
+    if(user && user['password'] === this.loginForm.get('password').value){
       this.authService.login();
       this.router.navigate(['/system']);
     } else {
