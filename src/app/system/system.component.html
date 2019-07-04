@@ -1,1 +1,16 @@
-<p>system works!</p>
+<div class="bg-light d-flex justify-content-end">
+  <div class="p-3 mr-auto text-center h3">
+    <span>Beer List</span>
+  </div>
+  <div class="p-3  text-center h5">
+    <span>{{ date | date:'dd.MM.yyyy' }}</span>
+  </div>
+  <div class="p-3 text-center h5">
+    <span> Добро пожаловать, {{user.name}}</span>
+  </div>
+  <div class="p-2 text-center">
+    <button class="btn btn-outline-secondary" (click)="onLogout()">
+      Выйти
+    </button>
+  </div>
+</div>

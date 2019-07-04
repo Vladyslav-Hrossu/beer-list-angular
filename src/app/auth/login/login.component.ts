@@ -63,6 +63,7 @@ export class LoginComponent implements OnInit {
 
     if (user && user['password'] === this.loginForm.get('password').value) {
       this.authService.login();
+      window.localStorage.setItem('user', JSON.stringify(user));
       this.router.navigate(['/system']);
     } else {
       this.showMessage({
