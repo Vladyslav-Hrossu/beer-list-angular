@@ -1,0 +1,9 @@
+<div class="d-flex p-3  justify-content-around">
+  <div class="p-2">{{ idx + 1 }}</div>
+  <div class="p-2"><img class="card-img-top" src="{{beerItem['image_url']}}"></div>
+  <div class="p-2">{{ beerItem['name'] }}</div>
+  <div class="p-2">{{beerItem['abv']}}</div>
+  <div class="p-2">
+    <a [routerLink]="['/details', beerItem['id']]" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>

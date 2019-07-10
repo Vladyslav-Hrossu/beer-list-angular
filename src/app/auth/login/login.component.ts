@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
     if (user && user['password'] === this.loginForm.get('password').value) {
       this.authService.login();
       window.localStorage.setItem('user', JSON.stringify(user));
-      this.router.navigate(['/system']);
+      this.router.navigate(['/list']);
     } else {
       this.showMessage({
         text: 'Неверные данные для входа!',

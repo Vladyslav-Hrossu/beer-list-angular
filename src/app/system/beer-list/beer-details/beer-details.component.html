@@ -1,0 +1,14 @@
+<div *ngIf="!isLoaded">Loading ...</div>
+<div *ngIf="isLoaded">
+  <div class="card">
+    <div class="card-header text-center">
+      <div> {{ beer['name'] }}</div>
+    </div>
+    <div class="card-body">
+      <img class="card-img-top" src="{{beer['image_url']}}">
+      <div>Описание: {{beer['description']}}</div>
+      <button [routerLink]="['/list']" class="btn btn-secondary">Вернуться</button>
+    </div>
+  </div>
+
+</div>

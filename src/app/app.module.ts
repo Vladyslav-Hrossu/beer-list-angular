@@ -10,6 +10,7 @@ import {UserCheckService} from "./shared/services/user-check.service";
 import {AuthGuard} from "./shared/services/auth.guard";
 import {AuthModule} from "./auth/auth.module";
 import {SystemModule} from "./system/system.module";
+import {BeerDataService} from "./shared/services/beer-data.service";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {SystemModule} from "./system/system.module";
     UsersService,
     AuthService,
     UserCheckService,
+    BeerDataService,
     AuthGuard
   ],
   bootstrap: [AppComponent]

@@ -18,11 +18,11 @@ export class SystemComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.user);
   }
 
   onLogout(){
     this.authService.logout();
-    this.router.navigate(['/login']);
+    window.localStorage.clear();
+    this.router.navigate(['login']);
   }
 }
